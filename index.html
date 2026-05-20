@@ -3,562 +3,472 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>广西米粉 · 运营提升方案</title>
+<title>广西米粉 · 美团智能收银全域营销方案</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
 
 :root {
-  --rice: #FFF5E6;
-  --broth: #E8C88A;
-  --broth-dark: #D4A85A;
-  --green: #2E7D32;
-  --green-light: #4CAF50;
-  --chili: #D32F2F;
-  --chili-light: #FF5722;
+  --fresh: #FDF8F3;
+  --green: #3A7B50;
+  --greendark: #235A38;
+  --greenlight: #E8F5E9;
+  --warm: #F4A030;
+  --warmlight: #FFF0D6;
+  --brown: #3E2723;
+  --brownlight: #8D6E63;
+  --bg: #FCF9F5;
+  --card: #FFFFFF;
   --text: #3E2723;
-  --text-light: #8D6E63;
-  --bg: #FEF9F0;
-  --card-bg: rgba(255,255,255,0.95);
+  --textlight: #8D6E63;
+  --border: rgba(62,39,35,0.07);
+  --chili: #C0392B;
+  --chililight: #FFCDD2;
+  --orange: #E67E22;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
 
-/* HERO */
+.wrap{max-width:1000px;margin:0 auto;padding:0 12px 50px}
+
+/* ===== HERO ===== */
 .hero{
-  position:relative;height:85vh;min-height:520px;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;text-align:center;
+  position:relative;min-height:55vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:60px 20px 40px;margin:0 -12px 20px;
+  background:linear-gradient(135deg, #235A38 0%, #3A7B50 30%, #F4A030 80%, #E67E22 100%);
+  overflow:hidden;
 }
-.hero-bg{
-  position:absolute;inset:0;
-  background:linear-gradient(135deg,#FFF5E6 0%,#F5E6CC 30%,#E8D5B0 60%,#D4E8D4 100%);
-}
-.hero-bg::after{
+.hero::before{
   content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at 30% 40%,rgba(232,200,138,0.2) 0%,transparent 60%),
-             radial-gradient(ellipse at 70% 60%,rgba(46,125,50,0.08) 0%,transparent 50%);
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity:0.08;
 }
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(62,39,35,0.2) 0%,rgba(62,39,35,0.1) 50%,rgba(254,249,240,0.8) 85%,var(--bg) 100%);
-}
-.hero-content{position:relative;z-index:2;padding:2rem;max-width:800px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,90,56,0.1) 0%,rgba(62,39,35,0.3) 100%)}
+.hero-content{position:relative;z-index:2;max-width:800px}
 .hero-badge{
-  display:inline-block;background:rgba(211,47,47,0.08);border:1px solid rgba(211,47,47,0.2);
-  color:var(--chili);padding:6px 20px;border-radius:20px;
-  font-size:0.75rem;letter-spacing:3px;margin-bottom:18px;
+  display:inline-block;padding:6px 20px;border-radius:20px;
+  background:rgba(244,160,48,0.2);border:1px solid rgba(244,160,48,0.3);
+  color:var(--warm);font-size:.7rem;letter-spacing:3px;margin-bottom:14px;
+  backdrop-filter:blur(4px);
 }
 .hero h1{
   font-family:'Noto Serif SC',serif;
-  font-size:clamp(2rem,5vw,3.5rem);color:var(--text);
-  letter-spacing:4px;margin-bottom:6px;
+  font-size:clamp(1.8rem,5vw,3rem);font-weight:900;
+  color:var(--fresh);letter-spacing:3px;margin-bottom:4px;
+  text-shadow:0 2px 20px rgba(0,0,0,0.15);
 }
 .hero h1 small{
-  display:block;font-size:clamp(.8rem,1.5vw,1rem);font-weight:400;
-  color:var(--text-light);margin-top:6px;letter-spacing:3px;
+  display:block;font-size:clamp(.7rem,1.8vw,.95rem);font-weight:400;
+  color:rgba(253,248,243,0.8);letter-spacing:5px;margin-top:8px;
 }
-.hero .rating{
-  margin:16px 0;font-size:1.2rem;letter-spacing:3px;
+.hero .sub{
+  display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:18px;
 }
-.hero .rating .star-on{color:var(--broth-dark)}
-.hero .rating .star-off{color:#ddd}
-.hero .tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
-.hero .tags span{
-  padding:5px 14px;border-radius:14px;font-size:.68rem;
-  background:rgba(255,255,255,0.6);border:1px solid rgba(62,39,35,0.08);
-  color:var(--text-light);
+.hero .sub span{
+  padding:4px 14px;border-radius:14px;font-size:.68rem;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.12);
+  color:rgba(253,248,243,0.85);letter-spacing:1px;
+  backdrop-filter:blur(4px);
 }
+.hero .scroll{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:var(--fresh);opacity:0.4;font-size:1.5rem;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 
-/* Bowl animation */
-.bowl-container{position:absolute;bottom:5%;right:8%;z-index:1;opacity:0.15;font-size:clamp(6rem,15vw,12rem);animation:steamRise 3s ease-in-out infinite}
-@keyframes steamRise{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-12px) rotate(2deg)}}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(255,245,230,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(62,39,35,0.06);padding:0 8px}
-.nav-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;overflow-x:auto;gap:2px;scrollbar-width:none}
-.nav-inner::-webkit-scrollbar{display:none}
-.nav-item{flex-shrink:0;padding:10px 12px;font-size:.66rem;color:var(--text-light);text-decoration:none;transition:all 0.3s;white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer}
-.nav-item:hover,.nav-item.active{color:var(--chili);border-bottom-color:var(--chili-light)}
-
-/* Sections */
-.section{max-width:1000px;margin:0 auto;padding:44px 16px}
-.section-header{text-align:center;margin-bottom:30px}
-.section-header .num{font-family:'Noto Serif SC',serif;font-size:2rem;color:var(--broth);opacity:0.4;line-height:1;margin-bottom:-6px}
-.section-header h2{font-family:'Noto Serif SC',serif;font-size:1.4rem;color:var(--text);letter-spacing:3px}
-.section-header .line{width:50px;height:2px;background:linear-gradient(90deg,var(--broth-dark),var(--green));margin:8px auto 0;border-radius:2px}
-
-.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.card{background:var(--card-bg);border-radius:12px;padding:18px 20px;border:1px solid rgba(62,39,35,0.06);box-shadow:0 1px 8px rgba(62,39,35,0.03);transition:all 0.3s}
-.card:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(62,39,35,0.06)}
-.card.full{grid-column:1/-1}
-.card-title{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid rgba(62,39,35,0.04)}
-.card-title .icon{font-size:1.1rem}
-
-.table-wrap{overflow-x:auto;margin:8px 0;border-radius:8px;border:1px solid rgba(62,39,35,0.04)}
-table{width:100%;border-collapse:collapse;font-size:.78rem;min-width:500px}
-th{background:linear-gradient(135deg,var(--text),var(--green));color:var(--rice);padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
-td{padding:7px 10px;border-bottom:1px solid rgba(62,39,35,0.04);color:var(--text)}
-tr:last-child td{border-bottom:none}
-tr:nth-child(even) td{background:rgba(254,249,240,0.4)}
-.price{color:var(--chili);font-weight:700}
-.price-hot{color:var(--chili-light);font-weight:800}
-
-.hl-box{background:rgba(46,125,50,0.04);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:10px 14px;margin:8px 0;font-size:.82rem}
-.hl-box strong{color:var(--green)}
-.hl-box.fire{border-left-color:var(--chili);background:rgba(211,47,47,0.03)}
-.hl-box.fire strong{color:var(--chili)}
-
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.gi{background:rgba(254,249,240,0.4);padding:8px 10px;border-radius:6px}
-.gi .l{font-size:.62rem;color:var(--text-light)}
-.gi .v{font-size:.82rem;font-weight:600;color:var(--text);margin-top:1px}
-
-.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0}
-.kpi-item{text-align:center;padding:12px 4px;background:rgba(232,200,138,0.08);border-radius:8px;border:1px solid rgba(232,200,138,0.12)}
-.kpi-item .num{font-size:1.1rem;font-weight:800;color:var(--green)}
-.kpi-item .label{font-size:.58rem;color:var(--text-light);margin-top:2px}
-
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0}
-.feat-item{padding:12px;background:rgba(254,249,240,0.4);border-radius:8px;text-align:center;border:1px solid rgba(62,39,35,0.03)}
-.feat-item .ic{font-size:1.3rem}
-.feat-item .t{font-weight:600;font-size:.78rem;color:var(--text);margin:3px 0}
-.feat-item .d{font-size:.68rem;color:var(--text-light)}
-
-ul,ol{padding-left:16px;margin:4px 0 8px}
-li{font-size:.8rem;margin-bottom:4px;color:var(--text);line-height:1.6}
-li strong{color:var(--green)}
-
-.phase-list{display:grid;gap:6px;margin:8px 0}
-.phase-row{display:grid;grid-template-columns:70px 1fr;gap:8px;padding:8px 10px;border-radius:6px;font-size:.78rem;align-items:start}
-.phase-row.p1{background:rgba(232,200,138,0.08)}
-.phase-row.p2{background:rgba(211,47,47,0.04)}
-.phase-row.p3{background:rgba(46,125,50,0.04)}
-.phase-row .tag{font-size:.65rem;font-weight:600;padding:2px 8px;border-radius:4px;text-align:center}
-.phase-row.p1 .tag{background:rgba(232,200,138,0.15);color:var(--text)}
-.phase-row.p2 .tag{background:rgba(211,47,47,0.1);color:var(--chili)}
-.phase-row.p3 .tag{background:rgba(46,125,50,0.1);color:var(--green)}
-.phase-row .desc{color:var(--text)}
-.phase-row .desc sm{font-size:.62rem;color:var(--text-light);display:block;margin-top:2px}
-
-.budget-list{display:grid;gap:3px;margin:6px 0}
-.budget-row{display:flex;justify-content:space-between;padding:5px 10px;background:rgba(254,249,240,0.5);border-radius:4px;font-size:.72rem}
-.budget-row.total{background:rgba(46,125,50,0.05);font-weight:700;border:1px solid rgba(46,125,50,0.12)}
-
-.tag{display:inline-block;padding:1px 7px;border-radius:3px;font-size:.62rem;font-weight:600}
-.tag.g{background:rgba(46,125,50,0.08);color:var(--green)}
-.tag.r{background:rgba(211,47,47,0.08);color:var(--chili)}
-.tag.y{background:rgba(232,200,138,0.15);color:var(--text)}
-
+/* ===== SECTIONS ===== */
+.section{padding:28px 0}
+.section-header{text-align:center;margin-bottom:22px}
+.section-header h2{font-family:'Noto Serif SC',serif;font-size:1.15rem;color:var(--brown);letter-spacing:3px}
+.section-header .line{width:50px;height:2px;background:linear-gradient(90deg,var(--green),var(--warm));margin:8px auto 0;border-radius:2px}
 .section-divider{text-align:center;margin:10px 0;font-size:14px;opacity:0.2;letter-spacing:5px}
 
-.footer{text-align:center;padding:24px 16px 18px;background:linear-gradient(135deg,var(--text),#2C1810);color:var(--rice);margin-top:20px;border-radius:14px 14px 0 0}
-.footer .mt{font-family:'Noto Serif SC',serif;font-size:1rem;color:var(--broth);font-weight:600}
-.footer .me{font-size:.62rem;color:var(--text-light);opacity:0.6;margin-top:6px}
+.card{background:var(--card);border-radius:12px;padding:18px 20px;margin-bottom:12px;border:1px solid var(--border);box-shadow:0 1px 6px rgba(62,39,35,0.03);transition:all 0.3s}
+.card:hover{box-shadow:0 3px 15px rgba(62,39,35,0.05)}
+.card.accent{background:linear-gradient(135deg,rgba(58,123,80,0.04),rgba(244,160,48,0.03))}
+.card.full{grid-column:1/-1}
+.card-title{font-family:'Noto Serif SC',serif;font-size:.92rem;font-weight:700;color:var(--brown);margin-bottom:10px;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.card-title .icon{font-size:1.1rem}
+
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0}
+.gi{background:rgba(253,248,243,0.5);border:1px solid var(--border);border-radius:8px;padding:10px}
+.gi .l{font-size:.62rem;color:var(--textlight)}
+.gi .v{font-size:.85rem;font-weight:700;color:var(--text);margin-top:1px}
+
+.feat-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;margin:8px 0}
+.feat-item{padding:12px 8px;background:rgba(253,248,243,0.4);border-radius:8px;text-align:center;border:1px solid var(--border)}
+.feat-item .ic{font-size:1.4rem}
+.feat-item .t{font-weight:700;font-size:.72rem;color:var(--brown);margin:4px 0 2px}
+.feat-item .d{font-size:.62rem;color:var(--textlight);line-height:1.4}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0}
+.kpi-item{text-align:center;padding:12px 4px;background:rgba(253,248,243,0.5);border-radius:8px;border:1px solid var(--border)}
+.kpi-item .num{font-size:1rem;font-weight:800;color:var(--green)}
+.kpi-item .label{font-size:.58rem;color:var(--textlight);margin-top:1px}
+
+.hl-box{background:var(--warmlight);border-left:3px solid var(--warm);border-radius:0 8px 8px 0;padding:10px 14px;margin:8px 0;font-size:.82rem;color:var(--brown)}
+.hl-box.g{background:var(--greenlight);border-left-color:var(--green)}
+
+table{width:100%;border-collapse:collapse;font-size:.78rem;margin:8px 0}
+th{background:var(--green);color:var(--fresh);padding:7px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--border);color:var(--text)}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:rgba(253,248,243,0.3)}
+.pr{color:var(--chili);font-weight:700}
+
+ul{padding-left:16px;margin:4px 0 8px}
+li{font-size:.82rem;margin-bottom:4px;color:var(--text);line-height:1.7}
+li strong{color:var(--green)}
+
+.tag{display:inline-block;padding:1px 8px;border-radius:3px;font-size:.62rem;font-weight:600}
+.tag.g{background:rgba(58,123,80,0.1);color:var(--green)}
+.tag.o{background:rgba(244,160,48,0.12);color:#C67A20}
+.tag.r{background:rgba(192,57,43,0.08);color:var(--chili)}
+
+.pg{display:grid;gap:6px;margin:8px 0}
+.pr2{display:grid;grid-template-columns:75px 1fr;gap:8px;padding:10px 12px;border-radius:8px;font-size:.78rem;align-items:start}
+.pr2.p1{background:rgba(58,123,80,0.04)}
+.pr2.p2{background:rgba(244,160,48,0.04)}
+.pr2.p3{background:rgba(62,39,35,0.03)}
+.pr2 .tg{font-size:.65rem;font-weight:600;padding:2px 8px;border-radius:4px;text-align:center}
+.pr2.p1 .tg{background:rgba(58,123,80,0.12);color:var(--green)}
+.pr2.p2 .tg{background:rgba(244,160,48,0.12);color:#C67A20}
+.pr2.p3 .tg{background:rgba(62,39,35,0.08);color:var(--brown)}
+.pr2 .dc{color:var(--text)}
+.pr2 .dc sm{font-size:.62rem;color:var(--textlight);display:block;margin-top:2px}
+
+.budget-list{display:grid;gap:3px;margin:6px 0}
+.budget-row{display:flex;justify-content:space-between;padding:5px 10px;background:rgba(253,248,243,0.5);border-radius:5px;font-size:.72rem}
+.budget-row.total{background:rgba(58,123,80,0.06);font-weight:700;border:1px solid rgba(58,123,80,0.12)}
+
+.speech-box{background:#fcf8f3;padding:10px 14px;border-radius:8px;margin:6px 0;font-size:.75rem;line-height:1.8;border-left:3px solid var(--warm)}
+.speech-box .sp{color:var(--green);font-weight:700}
+
+.footer{text-align:center;padding:24px;margin-top:16px;background:linear-gradient(135deg,var(--green),var(--greendark));border-radius:12px;color:var(--fresh)}
+.footer .mt{font-size:.9rem;font-weight:600;letter-spacing:2px}
+.footer .me{font-size:.62rem;opacity:.6;margin-top:6px}
 
 @media(max-width:640px){
-  .section{padding:28px 12px}
-  .card-grid,.feat-grid,.grid-2{grid-template-columns:1fr}
-  .kpi-grid{gap:4px}.kpi-item{padding:8px 2px}.kpi-item .num{font-size:.9rem}
-  table{font-size:.7rem;min-width:480px}
-  th,td{padding:5px 7px}
-  .hero h1{font-size:clamp(1.5rem,4vw,2.5rem)}
+  .card-grid,.feat-grid{grid-template-columns:1fr 1fr}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-2{grid-template-columns:1fr}
+  .section{padding:20px 0}
+  .card{padding:14px 16px}
+  .feat-item{padding:10px 6px}
 }
 </style>
 </head>
 <body>
+<div class="wrap">
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="bowl-container">🍜</div>
   <div class="hero-content">
-    <div class="hero-badge">🍜 咸水沽 · 吾悦广场 · 米线</div>
+    <div class="hero-badge">🍜 美团智能收银 · 全域营销方案</div>
     <h1>
       广西米粉
-      <small>全平台运营提升方案 · 从3.8到4.5的逆袭</small>
+      <small>咸水沽 · 吾悦广场 · 评分3.8→4.5</small>
     </h1>
-    <div class="rating">
-      <span class="star-on">★</span><span class="star-on">★</span><span class="star-on">★</span>
-      <span class="star-off">★</span><span class="star-off">★</span>
-      <span style="font-size:.8rem;color:var(--text-light);margin-left:8px">3.8 · ¥21/人</span>
-    </div>
-    <div class="tags">
+    <div class="sub">
+      <span>⭐ 3.8 → 4.5</span>
+      <span>💵 ¥21/人</span>
       <span>📍 津南咸水沽</span>
-      <span>🍜 广西米粉·米线</span>
-      <span>🏪 吾悦广场底商</span>
-      <span>💵 人均¥21</span>
+      <span>⚡ 美团智能收银</span>
     </div>
   </div>
+  <div class="scroll">⌄</div>
 </section>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a class="nav-item active" href="#diagnosis">🔍 门店诊断</a>
-    <a class="nav-item" href="#meituan">🔥 美团点评</a>
-    <a class="nav-item" href="#waimai">🛵 外卖运营</a>
-    <a class="nav-item" href="#products">🍜 产品定价</a>
-    <a class="nav-item" href="#scene">📸 场景营销</a>
-    <a class="nav-item" href="#kpi">📊 KPI·执行</a>
+<!-- ===== 1. 门店全景 ===== -->
+<div class="section">
+  <div class="section-header"><h2>门店档案</h2><div class="line"></div></div>
+  <div class="card accent">
+    <div class="grid-2">
+      <div class="gi"><div class="l">🏪 店名</div><div class="v">广西米粉</div></div>
+      <div class="gi"><div class="l">⭐ 评分</div><div class="v">★★★☆☆ 3.8</div></div>
+      <div class="gi"><div class="l">💵 人均</div><div class="v">¥21</div></div>
+      <div class="gi"><div class="l">🍜 品类</div><div class="v">米线/米粉</div></div>
+      <div class="gi"><div class="l">🥇 排名</div><div class="v">津南区米线新店榜第1名</div></div>
+      <div class="gi"><div class="l">📍 位置</div><div class="v">咸水沽·吾悦广场26号楼底商</div></div>
+    </div>
   </div>
-</nav>
+  <div class="card">
+    <div class="card-title"><span class="icon">🎯</span> 核心痛点与美团智能收银解决方案</div>
+    <table>
+      <tr><th>当前痛点</th><th>美团智能收银解决方案</th></tr>
+      <tr><td>评分3.8 · 评价少 · 线上口碑差</td><td>扫码点餐自动引导好评 · 团购核销自动好评邀请</td></tr>
+      <tr><td>人工核销团购 · 容易漏单错单</td><td>到店扫码自动核销 · 同步后厨打印 · 零失误</td></tr>
+      <tr><td>外卖手动接单 · 高峰期来不及</td><td>外卖自动接单出票 · 效率提升30%</td></tr>
+      <tr><td>没有会员体系 · 来了就走 · 无法复购</td><td>扫码即开电子会员卡 · 储值/次卡/积分/生日福利</td></tr>
+      <tr><td>不知道什么菜好卖 · 全靠感觉</td><td>经营报表自动生成 · 热销排行 · 毛利分析 · 辅助决策</td></tr>
+      <tr><td>食材库存靠记 · 常断货或浪费</td><td>进销存管理 · 库存预警 · 食材成本管控</td></tr>
+      <tr><td>老板不在店就看不了营收</td><td>美团管家App远程管理 · 手机看日/周/月营收</td></tr>
+    </table>
+    <div class="hl-box">
+      <strong>💡 一句话价值：</strong>美团智能收银+扫码点餐+团购核销+会员营销+经营分析，一套系统把广西米粉的 <strong>人工省了·效率提了·复购多了·钱算清了</strong>
+    </div>
+  </div>
+</div>
 
-<!-- 1. 诊断 -->
-<section class="section" id="diagnosis">
-  <div class="section-header">
-    <div class="num">壹</div>
-    <h2>门店诊断与机会</h2>
-    <div class="line"></div>
+<!-- ===== 2. 智能收银8大模块 ===== -->
+<div class="section">
+  <div class="section-header"><h2>美团智能收银 · 8大核心模块</h2><div class="line"></div></div>
+  <div class="card accent">
+    <div class="feat-grid">
+      <div class="feat-item"><div class="ic">📱</div><div class="t">扫码点餐</div><div class="d">入座扫码点菜 · 后厨同步打单 · 省1个服务员</div></div>
+      <div class="feat-item"><div class="ic">🔗</div><div class="t">团购核销</div><div class="d">自动核销 · 同步后厨 · 不漏单不输错</div></div>
+      <div class="feat-item"><div class="ic">🛵</div><div class="t">外卖接单</div><div class="d">自动接单出票 · 高峰多接20%订单</div></div>
+      <div class="feat-item"><div class="ic">🎟️</div><div class="t">电子会员卡</div><div class="d">扫码即开卡 · 储值/积分/生日福利</div></div>
+      <div class="feat-item"><div class="ic">📢</div><div class="t">优惠券体系</div><div class="d">新客立减 · 复购满减 · 沉睡唤醒 · 智能推送</div></div>
+      <div class="feat-item"><div class="ic">📊</div><div class="t">进销存</div><div class="d">食材库存 · 成本管控 · 估清预警 · 减少浪费</div></div>
+      <div class="feat-item"><div class="ic">📈</div><div class="t">经营报表</div><div class="d">热销排行 · 翻台率 · 会员分析 · 毛利分析</div></div>
+      <div class="feat-item"><div class="ic">🏠</div><div class="t">远程管理</div><div class="d">美团管家App · 手机看营收 · 远程发活动</div></div>
+    </div>
+    <div class="hl-box g">
+      <strong>⚡ 广西米粉专属价值测算：</strong><br>
+      · <strong>省人：</strong>扫码点餐+团购核销自动 → 省1名服务员 → 月省¥4,000-5,000<br>
+      · <strong>提效：</strong>外卖自动接单 → 高峰期多接20%订单 → 月增收¥2,000-3,000<br>
+      · <strong>增收：</strong>会员营销+智能复购 → 次月复购率提升15-20%<br>
+      · <strong>决策：</strong>报表分析 → 淘汰低毛利菜品·聚焦爆品·优化菜单
+    </div>
   </div>
+</div>
+
+<!-- ===== 3. 评分提升（收银联动） ===== -->
+<div class="section">
+  <div class="section-header"><h2>评分提升 · 智能收银联动好评</h2><div class="line"></div></div>
+  <div class="card accent">
+    <div class="card-title"><span class="icon">⭐</span> 3.8→4.5 提升路线图</div>
+    <table>
+      <tr><th>阶段</th><th>新增好评</th><th>目标评分</th><th>时间</th><th>智能收银配合动作</th></tr>
+      <tr><td>🚀 第1阶段</td><td>20条</td><td>4.0</td><td>D1-D14</td><td>扫码点餐结账页面弹出"好评送饮品"提示</td></tr>
+      <tr><td>🔥 第2阶段</td><td>50条</td><td>4.2</td><td>D15-D30</td><td>会员开卡自动推送好评邀请·团购核销后引导</td></tr>
+      <tr><td>🌟 第3阶段</td><td>80条</td><td>4.4</td><td>D31-D60</td><td>智能优惠券送好评用户·沉睡推送唤醒</td></tr>
+      <tr><td>🏆 第4阶段</td><td>100条</td><td>4.5</td><td>D61-D90</td><td>系统自动分析差评原因·定向优化</td></tr>
+    </table>
+    <div class="speech-box">
+      <span class="sp">🎯 好评引导话术（结账时 · 合规版）：</span><br>
+      "哥/姐，今天米粉味道还中不中？觉得好吃的话帮我在美团上点个好评呗～<br>
+      送您一份<strong>绿豆水/卤蛋</strong>，我这边直接帮您操作！"
+    </div>
+    <div class="hl-box g">
+      💡 智能收银联动：结账时收银员说好评话术 → 系统自动记录好评用户 → 下次到店自动识别打标签 → 推送复购优惠券
+    </div>
+  </div>
+</div>
+
+<!-- ===== 4. 团购+外卖 ===== -->
+<div class="section">
+  <div class="section-header"><h2>团购+外卖 · 智能收银增效</h2><div class="line"></div></div>
   <div class="card-grid">
-    <div class="card full">
-      <div class="card-title"><span class="icon">🏪</span> 门店档案</div>
-      <div class="grid-2">
-        <div class="gi"><div class="l">店名</div><div class="v">广西米粉</div></div>
-        <div class="gi"><div class="l">评分</div><div class="v">★★★☆☆ 3.8</div></div>
-        <div class="gi"><div class="l">人均</div><div class="v">¥21</div></div>
-        <div class="gi"><div class="l">品类</div><div class="v">米线/米粉</div></div>
-        <div class="gi"><div class="l">位置</div><div class="v">咸水沽·吾悦广场26号楼底商26号</div></div>
-        <div class="gi"><div class="l">商圈</div><div class="v">咸水沽商圈·津南</div></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="icon">⚠️</span> 3.8分问题诊断</div>
-      <ul>
-        <li><strong>口味：</strong>米粉口味偏淡/不正宗？或在天津受众有限</li>
-        <li><strong>环境：</strong>底商店面偏小·装修不够吸引人</li>
-        <li><strong>服务：</strong>可能响应速度/热情度不足</li>
-        <li><strong>线上运营：</strong>头图/菜品图不够诱人·评价回复不及时</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title"><span class="icon">🚀</span> 提升机会</div>
-      <ul>
-        <li><strong>品类优势：</strong>米粉适合外卖+堂食双场景</li>
-        <li><strong>价格优势：</strong>¥21低客单·高频复购潜力大</li>
-        <li><strong>位置优势：</strong>吾悦广场周边客流集中</li>
-        <li><strong>提升空间：</strong>3.8→4.5只差用心运营</li>
-      </ul>
-    </div>
-  </div>
-  <div class="section-divider">🍜 ✦ 🌿 ✦ 🥢</div>
-</section>
-
-<!-- 2. 美团点评 -->
-<section class="section" id="meituan">
-  <div class="section-header">
-    <div class="num">贰</div>
-    <h2>美团大众点评运营</h2>
-    <div class="line"></div>
-  </div>
-  <div class="card-grid">
-    <div class="card full">
-      <div class="table-wrap">
-      <table>
-        <tr><th>维度</th><th>现状</th><th>优化方案</th></tr>
-        <tr>
-          <td><strong>⭐ 评分管理</strong></td>
-          <td>3.8分·评价量少</td>
-          <td>前20条好评必须在1个月内拉到4.5+·每单引导好评（送卤蛋/豆皮）</td>
-        </tr>
-        <tr>
-          <td><strong>🖼️ 门店头图</strong></td>
-          <td>可能用网图/不好看</td>
-          <td>拍真实米粉特写（热气腾腾+配料丰富）·暖黄色调·食欲感拉满</td>
-        </tr>
-        <tr>
-          <td><strong>📸 菜品图</strong></td>
-          <td>不清晰或没有</td>
-          <td>上传8-10张精品菜品图：招牌米粉特写·汤底·配料·小菜·环境</td>
-        </tr>
-        <tr>
-          <td><strong>💬 差评响应</strong></td>
-          <td>可能无人回复</td>
-          <td>所有差评24h内回复·道歉+说明改进+邀请再来送小菜</td>
-        </tr>
-        <tr>
-          <td><strong>🎫 团购套餐</strong></td>
-          <td>可能没有或单一</td>
-          <td>重新设计套餐（见产品部分）·上线新客专享+代金券</td>
-        </tr>
-        <tr>
-          <td><strong>📢 商户通</strong></td>
-          <td>未开通/少投</td>
-          <td>开通商户通·定向咸水沽/津南·日均¥30-50</td>
-        </tr>
-      </table>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title"><span class="icon">💬</span> 好评引导话术</div>
-      <div class="hl-box" style="margin:0">
-        <strong>结账时（合规版）：</strong><br>
-        "哥/姐，今天这碗粉味道还中不中？<br>
-        觉得好吃的话，麻烦帮我们在美团上点个好评呗～<br>
-        送您一份卤蛋/炸豆皮/酸梅汤！"
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title"><span class="icon">⚡</span> 差评回复模板</div>
-      <div class="hl-box fire" style="margin:0">
-        "亲爱的顾客，非常抱歉给您带来不好的体验！<br>
-        关于您提到的【口味/服务/环境】问题，我们已经和后厨/服务员沟通整改。<br>
-        恳请您给个机会，下次来直接找店长，送您一份招牌米粉，让我们重新服务您！🙏"
-      </div>
-    </div>
-  </div>
-  <div class="section-divider">🍜 ✦ 🌿 ✦ 🥢</div>
-</section>
-
-<!-- 3. 外卖 -->
-<section class="section" id="waimai">
-  <div class="section-header">
-    <div class="num">叁</div>
-    <h2>美团外卖运营</h2>
-    <div class="line"></div>
-  </div>
-  <div class="card-grid">
-    <div class="card full">
-      <div class="hl-box fire">
-        <strong>💡 米粉外卖的"天选"优势：</strong>米粉出餐快（3分钟）· 成本低 · 餐盒成本仅¥1-2 · 适合做低客单高频外卖 · 是外卖品类中最赚钱的品类之一！
-      </div>
-      <div class="table-wrap">
-      <table>
-        <tr><th>维度</th><th>策略</th></tr>
-        <tr><td><strong>📱 门店装修</strong></td><td>头图用招牌米粉大特写·暖黄灯光·让人一看就饿</td></tr>
-        <tr><td><strong>💰 满减设计</strong></td><td>满20减3·满30减5·满45减8（低客单阶梯满减）</td></tr>
-        <tr><td><strong>🍜 菜品结构</strong></td><td>招牌汤粉·干捞粉·炒粉·小菜套餐·饮品</td></tr>
-        <tr><td><strong>🔥 新店活动</strong></td><td>首单立减3元·收藏店铺送¥2券</td></tr>
-        <tr><td><strong>🔄 复购策略</strong></td><td>满3单送1份米粉兑换券·定时发红包</td></tr>
-        <tr><td><strong>📦 包装升级</strong></td><td>汤粉分离（汤汁单独袋装）+广西米粉贴纸</td></tr>
-      </table>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title"><span class="icon">🕐</span> 高峰时段策略</div>
-      <ul>
-        <li><strong>午市（10:00-13:30）</strong>重点推招牌汤粉+套餐·出餐快·适合上班族</li>
-        <li><strong>下午茶（14:00-17:00）</strong>推干捞粉/炒粉（适合天气热时）</li>
-        <li><strong>晚市（17:00-20:00）</strong>推家庭小份套餐·双人餐</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title"><span class="icon">📈</span> 提升排名技巧</div>
-      <ul>
-        <li>3天内冲到商圈TOP10：前3天满减力度最大</li>
-        <li>每天出单40+单（米粉品类出单快·完全能做到）</li>
-        <li>好评率>98%：随单放好评卡"好评返¥2红包"</li>
-        <li>营业时间覆盖午+晚高峰（10:00-21:00）</li>
-      </ul>
-    </div>
-  </div>
-  <div class="section-divider">🍜 ✦ 🌿 ✦ 🥢</div>
-</section>
-
-<!-- 4. 产品 -->
-<section class="section" id="products">
-  <div class="section-header">
-    <div class="num">肆</div>
-    <h2>产品与套餐设计</h2>
-    <div class="line"></div>
-  </div>
-  <div class="card-grid">
-    <div class="card full">
-      <div class="table-wrap">
-      <table>
-        <tr><th>类型</th><th>产品</th><th>堂食价</th><th>外卖价</th><th>说明</th></tr>
-        <tr><td><strong>🔥 引流款</strong></td><td>招牌汤粉/干捞粉</td><td class="price-hot">¥12.9</td><td class="price-hot">¥15.9</td><td>低价引流·高频复购</td></tr>
-        <tr><td><strong>🌟 利润款</strong></td><td>螺蛳粉/老友粉</td><td class="price">¥16.9</td><td class="price">¥19.9</td><td>毛利60%·特色主打</td></tr>
-        <tr><td><strong>🥇 套餐款</strong></td><td>招牌粉+卤蛋/豆皮/饮品</td><td class="price">¥18.9</td><td class="price">¥22.9</td><td>升单利器·人均从¥15拉到¥20+</td></tr>
-        <tr><td><strong>🥟 小食饮品</strong></td><td>炸春卷·卤蛋·豆皮·酸梅汤·绿豆沙</td><td class="price">¥2-6</td><td class="price">¥3-7</td><td>高毛利搭售</td></tr>
-      </table>
-      </div>
-    </div>
-    <div class="card">
+    <div class="card" style="margin:0">
       <div class="card-title"><span class="icon">🎫</span> 团购套餐设计</div>
-      <div class="table-wrap">
       <table>
-        <tr><th>套餐</th><th>内容</th><th>原价</th><th>团购价</th></tr>
-        <tr><td>🔥 新客尝鲜</td><td>招牌汤粉+卤蛋</td><td>¥17.9</td><td class="price-hot">¥9.9</td></tr>
-        <tr><td>🥇 超值套餐</td><td>招牌粉+卤蛋+酸梅汤</td><td>¥22.9</td><td class="price">¥14.9</td></tr>
-        <tr><td>👥 双人餐</td><td>招牌粉×2+小食×2+饮品×2</td><td>¥45</td><td class="price">¥28</td></tr>
-        <tr><td>💳 代金券</td><td>满15减3·全场通用</td><td>—</td><td class="price">¥1</td></tr>
+        <tr><th>套餐</th><th>内容</th><th>原价</th><th>售价</th></tr>
+        <tr><td>🔥 单人嗦粉</td><td>招牌老友粉+卤蛋+绿豆水</td><td>¥23</td><td class="pr">¥12.9</td></tr>
+        <tr><td>🔥🔥 双人嗦粉</td><td>粉×2+卤蛋×2+绿豆水×2</td><td>¥46</td><td class="pr">¥24.9</td></tr>
+        <tr><td>💳 代金券</td><td>满20减2 · 全场通用</td><td>—</td><td class="pr">¥0.1</td></tr>
       </table>
+      <div class="hl-box g" style="font-size:.72rem;padding:6px 10px">
+        ⚡ 智能收银团购核销：顾客到店扫码→自动核销→后厨打单→全程无人工干预
       </div>
     </div>
-    <div class="card">
-      <div class="card-title"><span class="icon">🔄</span> 复购锁客</div>
-      <ul>
-        <li><strong>次卡：</strong>¥49吃5次招牌粉（每次省¥3.8）</li>
-        <li><strong>集章：</strong>吃5碗送1碗招牌粉</li>
-        <li><strong>微信群：</strong>进群领¥3券·每周限定优惠</li>
-        <li><strong>储值：</strong>充100送15·充200送40</li>
-      </ul>
-    </div>
-  </div>
-  <div class="section-divider">🍜 ✦ 🌿 ✦ 🥢</div>
-</section>
-
-<!-- 5. 场景营销 -->
-<section class="section" id="scene">
-  <div class="section-header">
-    <div class="num">伍</div>
-    <h2>场景化营销建议</h2>
-    <div class="line"></div>
-  </div>
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-title"><span class="icon">📸</span> 拍照出片点</div>
-      <ul>
-        <li>透明操作台展示米粉烫煮过程（烟火气）</li>
-        <li>调料台多样（酸笋·辣椒·蒜蓉·葱花）</li>
-        <li>粗陶碗+木托盘上粉（有质感）</li>
-        <li>墙面手绘广西山水+米粉制作流程图</li>
-        <li>一句话口号"嗦一口粉·回到桂林"</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title"><span class="icon">🎬</span> 抖音内容方向</div>
-      <ul>
-        <li><strong>老板自己拍：</strong>"今天又卖了100碗"日常记录</li>
-        <li><strong>特写镜头：</strong>米粉出锅·浇汤·加料·搅拌（15秒必火）</li>
-        <li><strong>顾客吃相：</strong>大口嗦粉的高潮表情</li>
-        <li><strong>探店达人：</strong>邀请津南美食号免费试吃置换内容</li>
-        <li><strong>话题：</strong>#咸水沽美食 #天津嗦粉 #广西米粉</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title"><span class="icon">📕</span> 小红书种草</div>
-      <ul>
-        <li>笔记方向："咸水沽这家广西米粉绝了""¥9.9嗦粉快乐"</li>
-        <li>主推：热腾腾的汤粉特写+性价比¥9.9</li>
-        <li>邀请素人探店·免费吃粉换一篇笔记</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title"><span class="icon">🎯</span> 开业/促销活动</div>
-      <ul>
-        <li><strong>周末限定：</strong>周六日招牌粉买1送1</li>
-        <li><strong>学生优惠：</strong>凭学生证立减¥2（咸水沽附近有大学城）</li>
-        <li><strong>辣度挑战：</strong>超级辣挑战·成功免单（抖音爆款素材）</li>
-        <li><strong>广西文化日：</strong>穿广西民族服饰到店送米粉</li>
-      </ul>
-    </div>
-  </div>
-  <div class="section-divider">🍜 ✦ 🌿 ✦ 🥢</div>
-</section>
-
-<!-- 6. KPI -->
-<section class="section" id="kpi">
-  <div class="section-header">
-    <div class="num">陆</div>
-    <h2>KPI目标与执行节奏</h2>
-    <div class="line"></div>
-  </div>
-  <div class="card-grid">
-    <div class="card full">
-      <div class="kpi-grid">
-        <div class="kpi-item"><div class="num">4.5+</div><div class="label">⭐ 目标评分</div></div>
-        <div class="kpi-item"><div class="num">50+条</div><div class="label">📝 首月新增评价</div></div>
-        <div class="kpi-item"><div class="num">200+单</div><div class="label">🛵 外卖月销</div></div>
-        <div class="kpi-item"><div class="num">500+人</div><div class="label">👥 微信群</div></div>
-        <div class="kpi-item"><div class="num">60%+</div><div class="label">✅ 团购核销率</div></div>
-        <div class="kpi-item"><div class="num">¥2.5-3万</div><div class="label">💰 月营收目标</div></div>
+    <div class="card" style="margin:0">
+      <div class="card-title"><span class="icon">🛵</span> 外卖策略</div>
+      <table>
+        <tr><th>项目</th><th>内容</th></tr>
+        <tr><td>满减</td><td>满25减3 · 满35减5 · 满50减8</td></tr>
+        <tr><td>新店7天</td><td>满20减5（冲排名）</td></tr>
+        <tr><td>单人套餐</td><td>粉+蛋+饮品 ¥18.9</td></tr>
+        <tr><td>双人套餐</td><td>粉×2+小食×2 ¥34.9</td></tr>
+      </table>
+      <div class="hl-box g" style="font-size:.72rem;padding:6px 10px">
+        ⚡ 智能收银自动接单：外卖订单→自动接→后厨出票→免人工操作·高峰期不慌
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="card full">
-      <div class="phase-list">
-        <div class="phase-row p1">
-          <div class="tag">⚡ 第1周</div>
-          <div class="desc">
-            <strong>评分急救期</strong><br>
-            · 上传新菜品图/环境图（至少10张）<br>
-            · 回复所有旧差评（诚恳道歉+送券）<br>
-            · 每天引导5-8条真实好评<br>
-            · 设计上线新团购套餐（¥9.9新客尝鲜）<br>
-            · 开通美团商户通·测试投放<br>
-            <sm>目标：评分从3.8提到4.0</sm>
-          </div>
-        </div>
-        <div class="phase-row p2">
-          <div class="tag">🔥 第2-3周</div>
-          <div class="desc">
-            <strong>外卖冲量期</strong><br>
-            · 外卖端满减活动上线·冲商圈排名<br>
-            · 每天堂食好评10条+·拍照发评价<br>
-            · 抖音拍5条短视频·邀请2位达人探店<br>
-            · 微信群开始拉人（进群送¥3券）<br>
-            · 储值/次卡活动上线<br>
-            <sm>目标：评分4.2+·外卖日销20+单·社群200人</sm>
-          </div>
-        </div>
-        <div class="phase-row p3">
-          <div class="tag">🌟 第4周+</div>
-          <div class="desc">
-            <strong>稳定运营期</strong><br>
-            · 商户通持续投放（日均¥30-50·定向咸水沽/津南）<br>
-            · 每周更新1条图文评价+1条视频评价<br>
-            · 社群每周发福利·会员日（周三88折）<br>
-            · 每月1次限时活动保持热度<br>
-            · 数据分析复盘：热销菜品·客单价·复购率<br>
-            <sm>目标：评分4.5+·月销稳定·社群500人</sm>
-          </div>
+<!-- ===== 5. 会员复购 ===== -->
+<div class="section">
+  <div class="section-header"><h2>会员复购 · 智能收银锁客</h2><div class="line"></div></div>
+  <div class="card accent">
+    <div class="card-title"><span class="icon">🎯</span> 三级会员体系</div>
+    <div class="feat-grid" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="feat-item" style="background:#fff8e1">
+        <div class="ic">🌱</div><div class="t">山野客</div>
+        <div class="d">扫码免费开卡·送¥3券·积分·生日送卤蛋</div>
+      </div>
+      <div class="feat-item" style="background:#e8f5e9">
+        <div class="ic">🍜</div><div class="t">嗦粉达人</div>
+        <div class="d">消费满¥200升级·会员日88折·专属优惠券</div>
+      </div>
+      <div class="feat-item" style="background:#fff3e0">
+        <div class="ic">🏆</div><div class="t">米粉王者</div>
+        <div class="d">消费满¥500或储值·全场85折·新品免费试吃</div>
+      </div>
+    </div>
+    <div class="hl-box g">
+      <strong>⚡ 智能收银·会员全自动运营：</strong><br>
+      ① 扫码点餐→弹窗开卡送券 → ② 消费自动积分 → ③ 生日系统自动识别送福利<br>
+      ④ 沉睡30天→系统自动推送唤醒券 → ⑤ 消费满额→自动升级会员等级
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">💳</span> 储值锁客方案</div>
+    <div class="grid-2">
+      <div class="gi"><div class="l">💳 充50</div><div class="v">送8元 = 储物≈8.6折</div></div>
+      <div class="gi"><div class="l">💳 充100</div><div class="v">送20元 = 储物≈8.3折</div></div>
+      <div class="gi"><div class="l">💳 充200</div><div class="v">送50元 = 储物≈8折</div></div>
+      <div class="gi"><div class="l">🎟️ 次卡</div><div class="v">¥49吃5碗（省¥16）</div></div>
+    </div>
+    <div class="hl-box" style="font-size:.75rem">
+      💡 低客单（¥21）更适合次卡锁客：只要第1次体验好，¥49吃5碗的次卡几乎必买！<br>
+      智能收银系统自动识别次卡·自动核销·到期自动提醒续费
+    </div>
+  </div>
+</div>
+
+<!-- ===== 6. 社群+商圈 ===== -->
+<div class="section">
+  <div class="section-header"><h2>私域社群 · 商圈渗透</h2><div class="line"></div></div>
+  <div class="card accent">
+    <div class="card-title"><span class="icon">👥</span> 社群运营SOP</div>
+    <div class="speech-box">
+      <span class="sp">📱 入群话术（结账时·智能收银弹窗）：</span><br>
+      "扫这个码进咱家嗦粉群，进群就送¥3券，<br>
+      每周三还有会员日88折！"
+    </div>
+    <div class="grid-2">
+      <div class="gi"><div class="l">📅 周一</div><div class="v">本周活动预告·周三会员日海报</div></div>
+      <div class="gi"><div class="l">🔥 周三</div><div class="v">会员日88折链接·限量秒杀</div></div>
+      <div class="gi"><div class="l">🍜 周五</div><div class="v">周末嗦粉提醒·新品预告·抽奖</div></div>
+      <div class="gi"><div class="l">📍 不定期</div><div class="v">吾悦广场合作活动·限时特惠</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">📍</span> 咸水沽商圈运营</div>
+    <div class="grid-2">
+      <div class="gi"><div class="l">🏪 商户合作</div><div class="v">吾悦广场商户互推·员工餐合作</div></div>
+      <div class="gi"><div class="l">📢 地推引流</div><div class="v">周六日吾悦入口发DM单·扫码进群领券</div></div>
+      <div class="gi"><div class="l">👥 商圈社群</div><div class="v">咸水沽本地生活群·每天发优惠</div></div>
+      <div class="gi"><div class="l">🎬 抖音同城</div><div class="v">拍"吾悦旁边这家米粉"·定位+团购</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 7. 执行节奏 ===== -->
+<div class="section">
+  <div class="section-header"><h2>90天执行节奏</h2><div class="line"></div></div>
+  <div class="card accent">
+    <div class="pg">
+      <div class="pr2 p1">
+        <div class="tg">📋 第1-2周</div>
+        <div class="dc">
+          <strong>冲刺评分+上线系统：</strong>美团智能收银安装调试·完成扫码点餐+团购核销配置<br>
+          上架团购套餐·拍照更新门店页面·每天引导5条好评<br>
+          外卖满减活动上线·员工培训好评话术<br>
+          <sm>目标：评分4.0·团购上线·外卖开单</sm>
         </div>
       </div>
-    </div>
-
-    <div class="card full">
-      <div class="card-title"><span class="icon">💰</span> 投入预算</div>
-      <div class="budget-list">
-        <div class="budget-row"><span>📸 菜品/环境专业拍摄</span><span>¥300-500</span></div>
-        <div class="budget-row"><span>🔥 美团商户通投放（首月）</span><span>¥800-1,200</span></div>
-        <div class="budget-row"><span>🎬 抖音达人探店（2-3位）</span><span>¥500-1,000</span></div>
-        <div class="budget-row"><span>🎁 开业赠品/好评小料成本</span><span>¥200-400</span></div>
-        <div class="budget-row"><span>📢 物料（海报/桌贴/餐垫）</span><span>¥200-300</span></div>
-        <div class="budget-row total"><span>🎯 首月总预算</span><span>约¥2,000-3,400</span></div>
+      <div class="pr2 p2">
+        <div class="tg">🔥 第3-4周</div>
+        <div class="dc">
+          <strong>会员拉新+社群：</strong>扫码点餐弹窗开卡→拉会员·储值+次卡上线<br>
+          抖音达人1-2位·吾悦地推·社群建群<br>
+          智能收银经营报表分析·优化菜单结构<br>
+          <sm>目标：评分4.2·会员开卡200+·社群300人</sm>
+        </div>
       </div>
-      <div class="hl-box">
-        <strong>📈 月营收测算（¥21人均·堂食+外卖）：</strong><br>
-        · <strong>堂食：</strong>日均50-80客 × ¥21 = ¥1,050-1,680/天<br>
-        · <strong>外卖：</strong>日均30-50单 × ¥18（扣后）= ¥540-900/天<br>
-        · <strong>日均总营收：¥1,590-2,580 · 月营收：¥4.7-7.7万</strong><br>
-        · 保守目标：首月¥2.5-3万（优化爬坡期）·次月起冲¥4万+
+      <div class="pr2 p3">
+        <div class="tg">🌟 第2-3月</div>
+        <div class="dc">
+          <strong>稳定运营优化：</strong>智能收银沉睡唤醒推送·会员日固定活动<br>
+          数据分析迭代·淘汰低毛利菜品·聚焦爆品<br>
+          商户通投放·持续好评增长<br>
+          <sm>目标：评分4.5·团购月销300+·次月复购率20%+</sm>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="mt">🍜 广西米粉 · 嗦一口粉 · 回到桂林</div>
-  <div style="font-size:.8rem;color:rgba(255,245,230,0.6);margin:6px 0">
-    从3.8到4.5 · 一 碗粉的逆袭
+<!-- ===== 8. KPI ===== -->
+<div class="section">
+  <div class="section-header"><h2>KPI目标</h2><div class="line"></div></div>
+  <div class="card accent">
+    <div class="kpi-grid">
+      <div class="kpi-item"><div class="num">4.5</div><div class="label">⭐ 目标评分</div></div>
+      <div class="kpi-item"><div class="num">100+</div><div class="label">📝 评价总数</div></div>
+      <div class="kpi-item"><div class="num">300+</div><div class="label">📦 团购月销</div></div>
+      <div class="kpi-item"><div class="num">200+</div><div class="label">🛵 外卖月销</div></div>
+      <div class="kpi-item"><div class="num">300+</div><div class="label">👥 社群</div></div>
+      <div class="kpi-item"><div class="num">200+</div><div class="label">💳 会员开卡</div></div>
+      <div class="kpi-item"><div class="num">20%+</div><div class="label">🔄 复购率</div></div>
+      <div class="kpi-item"><div class="num">¥3-5万</div><div class="label">💰 月营收</div></div>
+    </div>
   </div>
-  <div class="me">
-    方案生成：2026-05-20 · 咸水沽吾悦广场<br>
-    美团全平台运营 · 外卖+堂食双驱动
-  </div>
-</footer>
 
-<script>
-// 导航栏滚动高亮
-const navItems = document.querySelectorAll('.nav-item');
-const sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    const top = s.offsetTop - 120;
-    if(window.scrollY >= top) current = s.id;
-  });
-  navItems.forEach(item => {
-    item.classList.toggle('active', item.getAttribute('href') === '#' + current);
-  });
-});
-</script>
+  <div class="card">
+    <div class="card-title"><span class="icon">💰</span> 预算与回报</div>
+    <div class="budget-list">
+      <div class="budget-row"><span>⚡ 美团智能收银</span><span>咨询业务顾问</span></div>
+      <div class="budget-row"><span>📸 菜品拍摄+页面装修</span><span>¥300-500</span></div>
+      <div class="budget-row"><span>🎬 抖音达人探店</span><span>¥500-1,000</span></div>
+      <div class="budget-row"><span>📕 小红书素人</span><span>¥300-500</span></div>
+      <div class="budget-row"><span>📄 地推物料</span><span>¥200-300</span></div>
+      <div class="budget-row"><span>🎁 好评赠品成本</span><span>¥200-400</span></div>
+      <div class="budget-row"><span>📦 外卖包装  </span><span>¥200-300</span></div>
+      <div class="budget-row total"><span>🎯 总投入</span><span>约¥1,700-3,000</span></div>
+    </div>
+    <div class="hl-box g">
+      <strong>📈 智能收银省人回报测算：</strong><br>
+      · 扫码点餐+团购核销自动 → 省1人 → 月省¥4,000-5,000<br>
+      · 外卖自动接单 → 多接20% → 月增¥2,000-3,000营收<br>
+      · 会员复购提升 → 次月复购率增15-20%<br>
+      · <strong>美团智能收银=3个月回本 · 之后净赚人工费！</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 9. BD沟通话术 ===== -->
+<div class="section">
+  <div class="section-header"><h2>BD沟通话术</h2><div class="line"></div></div>
+  <div class="card accent">
+    <div class="speech-box">
+      <span class="sp">🎯 三句话说服老板：</span><br><br>
+      <strong>第一句（痛点切入）：</strong>"老板，咱店评分3.8，评价也少，线上客人搜不到咱。<br>
+      装美团智能收银，扫码点餐能省1个人工，每月省¥4,000多，一年就是¥5万。"<br><br>
+      <strong>第二句（提效增收）：</strong>"装了之后团购自动核销、外卖自动接单，<br>
+      高峰期多接20%单，每个月多赚¥2,000-3,000。"<br><br>
+      <strong>第三句（锁客复购）：</strong>"再配合会员卡+储值+次卡，<br>
+      让客人充了钱就跑不了，复购率从10%提到30%，<br>
+      ¥12.9的团购+智能收银，一条龙全搞定！"
+    </div>
+  </div>
+</div>
+
+<!-- 总结 -->
+<div class="card" style="text-align:center;border-color:rgba(58,123,80,0.2)">
+  <div style="font-size:1.8rem;margin-bottom:4px">🍜</div>
+  <div style="font-size:.9rem;font-weight:700;color:var(--brown);line-height:1.8">
+    「美团智能收银 + 全平台运营 = 广西米粉从3.8到4.5的逆袭」
+  </div>
+  <div style="font-size:.72rem;color:var(--textlight);margin-top:6px;line-height:1.8">
+    扫码点餐省人工 · 团购核销不漏单 · 外卖接单全自动<br>
+    会员锁客提复购 · 经营报表助决策 · 远程管理手机控<br>
+    让咸水沽人都知道——吾悦广场旁边有家正宗的广西米粉！
+  </div>
+</div>
+
+<div class="footer">
+  <div class="mt">🍜 广西米粉 · 咸水沽吾悦广场 · 美团智能收银</div>
+  <div class="me">方案生成：2026-05-20 · 美团全平台+智能收银全域营销方案</div>
+</div>
+
+</div>
 </body>
 </html>
